@@ -34,9 +34,14 @@ const addNewGoal = () => {
         }
     });
     
-    const newGoal = document.createElement('li');
-    newGoal.textContent = goalInput;
-    goalList.appendChild(newGoal);
+    // When no duplicate is found new goal is appended, if not user gets alert
+    if (duplicateFound === false) {
+        const newGoal = document.createElement('li');
+        newGoal.textContent = goalInput;
+        goalList.appendChild(newGoal);
+    }else{
+        alert("This goal already exists. Please enter a different goal.");
+    }
 };
 
 // Add event listener to the goal submit button
