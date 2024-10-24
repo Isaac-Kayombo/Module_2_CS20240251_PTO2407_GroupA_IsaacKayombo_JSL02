@@ -25,6 +25,14 @@ const addNewGoal = () => {
     //Initialise Boolean variable for duplicate check
     let duplicateFound = false;
 
+    // Checking for duplicate entries in a list (goalList) by comparing the text content of each list item 
+    Array.from(goalList.children).forEach((li) => {
+        console.log(li.textContent);
+
+        if (li.textContent === goalInput) {
+            duplicateFound = true;
+        }
+    });
     
     const newGoal = document.createElement('li');
     newGoal.textContent = goalInput;
